@@ -7,6 +7,11 @@ TEAM_CHOICES = (
     ("ENLIGHTENED", "启萌菌"),
     ("RESISTANCE", "懒菌"),
 )
+WELCOME_MESSAGE_SEND_CONDITION_CHOICES = (
+    (None, "not send"),
+    ("freshman", "just new agents"),
+    ("new_come", "new come agents"),
+)
 
 
 # Create your models here.
@@ -16,6 +21,11 @@ class Senders(models.Model):
     cookies = models.TextField(verbose_name="sender cookies", blank=False, null=False)
     field = models.TextField(verbose_name="sender field", blank=False, null=False)
     team = models.CharField(verbose_name="sender team", max_length=11, choices=TEAM_CHOICES, blank=False, null=False)
+
+
+class Settings(models.Model):
+    welcome_message_send_condition = models.CharField(verbose_name="welcome message send condition", max_length=10,
+                                                      default=None)
 
 
 class Watchers(models.Model):
@@ -113,10 +123,23 @@ class Portals(models.Model):
 
 
 class Agents(models.Model):
+    name = models.CharField(verbose_name="agent name", max_length=50, null=False, blank=False)
+    team = models.CharField(verbose_name="sender team", max_length=11, choices=TEAM_CHOICES, blank=False, null=False)
+    sent_welcome_message = models.BooleanField(verbose_name="sent welcome message", default=False)
+
     pass
     # TODO portal pars
 
 
 class Messages(models.Model):
+    guid = models.CharField(verbose_name="message guid", max_length=35, null=False, blank=False)
+    time_stamp = models.CharField(verbose_name="message time stamp", max_length=16, blank=False, null=False)
+    message_type = models.CharField(verbose_name="message type", max_length=30, null=True, blank=True)
+    plext = models.TextField(verbose_name="message content", null=False, blank=False)
+    portal_name = models.CharField(verbose_name="portal name", max_length=50, null=True, blank=True)
+    portal_guid = models.CharField(verbose_name="portal guid", max_length=35, null=True, blank=True)
+    portal_lat = models.CharField(verbose_name="portal lat", max_length=15, null=True, blank=True)
+    portal_lng = models.CharField(verbose_name="portal lng", max_length=15, null=True, blank=True)
+
     pass
     # TODO messages pars
