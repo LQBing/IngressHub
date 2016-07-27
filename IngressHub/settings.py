@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djcelery',
+    'IngressWatcher',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -84,6 +85,7 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 
@@ -124,6 +126,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 djcelery.setup_loader()
+BROKER_URL = 'amqp://ingress:guest@localhost:5672//'
+
 
 try:
     from local_settings import *
