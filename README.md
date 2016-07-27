@@ -17,4 +17,6 @@ You can copy the field with this format from Chrome's F12.
 Network, request 'getPlexts', right click, 'Copy as cURL', pick cookies and field info from it.
 
 # quote
+
+[https://github.com/LQBing/IngressApiParser](https://github.com/LQBing/IngressApiParser)
 [https://github.com/blackgear/ingrex_lib](https://github.com/blackgear/ingrex_lib)
