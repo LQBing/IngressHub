@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 
 djcelery.setup_loader()
 BROKER_URL = 'amqp://ingress:guest@localhost:5672//'
-
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 try:
     from local_settings import *
