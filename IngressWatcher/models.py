@@ -44,6 +44,9 @@ class Sender(models.Model):
     remark = models.CharField(verbose_name=u"备注", max_length=50, blank=True, null=True)
     disable = models.BooleanField(verbose_name=u"禁用", default=False)
 
+    def __unicode__(self):
+        return self.name
+
     def get_sender_dict(self):
         if self.disable:
             raise ValueError("Sender [%s]%s is disabled." % (self.id, self.name))
@@ -65,6 +68,9 @@ class Watcher(models.Model):
     remark = models.CharField(verbose_name=u"备注", max_length=50, blank=True, null=True)
     disable = models.BooleanField(verbose_name=u"禁用", default=False)
 
+    def __unicode__(self):
+        return self.name
+
     def get_watcher_cookie(self):
         if self.disable:
             raise ValueError("Watcher %s is disabled." % self.id)
@@ -78,6 +84,9 @@ class WatchPoint(models.Model):
     maxLngE6 = models.IntegerField(verbose_name=u"maxLngE6")
     minLngE6 = models.IntegerField(verbose_name=u"minLngE6")
     disable = models.BooleanField(verbose_name=u"禁用", default=False)
+
+    def __unicode__(self):
+        return self.name
 
     def get_watch_point_field(self):
         if self.disable:
