@@ -1,16 +1,20 @@
 # IngressHub
 
+## software dependency
 
-celery相關表必須為utf8
-watcher_messages表 必須為 utf8mbc 
+mysql, rabbitmq, python 2.7+ or python 3.4+
 
+PS: mysql db must be utf8mb4.
 
-# get info
+## get cookies and field
 
-## get field
+Grab your cookies from Chrome F12 or Firefox and use the format like this:
 
-## get cookies
+    SACSID=AAAA...AAAA; csrftoken=BBBB....BBBB; ingress.intelmap.shflt=viz; ingress.intelmap.lat=40.0000000000000; ingress.intelmap.lng=120.00000000000000; ingress.intelmap.zoom=16
 
+You can copy the field with this format from Chrome's F12.
+
+Network, request 'getPlexts', right click, 'Copy as cURL', pick cookies and field info from it.
 
 # quote
-(https://github.com/blackgear/ingrex_lib)[https://github.com/blackgear/ingrex_lib]
+[https://github.com/blackgear/ingrex_lib](https://github.com/blackgear/ingrex_lib)
