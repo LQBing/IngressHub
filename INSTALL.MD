@@ -57,7 +57,7 @@ change direct to project folder
 change direct to project folder, run celery worker & celery beat system backend
 
     nohup python manage.py celery worker &
-    nohup python manage.py celery baet &
+    nohup python manage.py celery beat &
 
 
 
