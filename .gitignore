@@ -93,3 +93,6 @@ ENV/
 
 .idea/
 logs/
+
+# background job file
+nohup.out

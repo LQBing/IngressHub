@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Agent, Portal, Message, WatchPoint, Watcher, Sender, Setting
+from IngressWatcher.models import Agent, Portal, Message, WatchPoint, Watcher, Sender, Setting
 
 
 # Register your models here.

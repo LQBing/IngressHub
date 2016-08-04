@@ -1,9 +1,9 @@
 # coding=utf-8
 from django.db import models
-import ingress_json_parser
+import IngressWatcher.ingress_json_parser
 import ast
 import time
-from intel import Intel
+from IngressWatcher.intel import Intel
 
 TEAM_CHOICES = (
     ("ENLIGHTENED", u"启萌菌"),

@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import os
-from celery import Celery
+from celery import Celery, platforms
 import django
 
 # import logging
@@ -11,6 +11,7 @@ import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IngressHub.settings')
 
 app = Celery('IngressWatcher')
+platforms.C_FORCE_ROOT = True
 
 django.setup()
 # Using a string here means the worker will not have to
